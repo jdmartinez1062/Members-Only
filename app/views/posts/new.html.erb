@@ -1,11 +1,11 @@
 <h1>Create a new post</h1>
 
-<%=form_with model: @post do |f|%>
-
-    <%=f.label :title%>
-    <%=f.text_field :title, 'Post Title'%>
-    <%=f.label :content%>
-    <%=f.text_area :content, 'Story:'%>
+<%=form_for @post do |f|%>
+    <%=render 'shared/posts_error_messages' %>
+    <%=f.label :title, 'Post Title'%>
+    <%=f.text_field :title%>
+    <%=f.label :content, 'Story:'%>
+    <%=f.text_area :content%>
 
     <%=f.submit "Create Post"%>    
 

@@ -2,10 +2,10 @@
     
     
 
-<%=form_with model: @user do |f|%>
-
-    <%= render 'shared/error_messages' %>
-    
+<%=form_for @user do |f|%>
+    <div>
+    <%=render 'shared/users_error_messages' %>
+    </div>
     <%=f.label :name, "Username"%>
     <%=f.text_field :name%>
     <%=f.label :email%>
