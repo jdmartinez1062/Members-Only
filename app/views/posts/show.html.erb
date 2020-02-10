@@ -1,3 +1,16 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
 
+<%if logged_in?%>
+    <div>
+    <p>Post Author: <%=current_post.author%></p>
+    </div>
+<% end %>
+
+
+<div>
+    <h1><%=current_post.title%></h1>
+    <div>
+        <p><%=current_post.content%></p>
+    <div>
+</div>

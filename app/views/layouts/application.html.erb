@@ -10,7 +10,22 @@
   </head>
 
   <body>
+  <nav>
+    <%if logged_in?%>
+      <div>
+        <%= link_to "Log out", logout_path, method: :delete %>
+         <%= link_to "Create post", new_post_path%>
+      </div>
+    <%else%>
+      <div>
+        <%= link_to "Log in", login_path %>
+        <%= link_to "Sign up", new_user_path %>
+      </div>
+    <% end %>
+    
+    <h1><%= link_to "Posts Index", posts_path %></h1>
 
+  <nav>
     <% flash.each do |message_type, message| %>
       <div class="<%= message_type %>"><%= message %></div>
     <% end %>

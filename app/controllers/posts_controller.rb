@@ -1,14 +1,18 @@
 class PostsController < ApplicationController
-  before_action :find_user, only: [:create, :edit, :update]
+  include SessionsHelper
+  include PostsHelper
+
+  before_action :post_logged_in?, only: [:create, :edit, :update]
   def new
     @post = Post.new()
   end
   
   def index
+    @posts = Post.all
   end
 
   def create
-    @post = Post.new(post_params, @user.id)
+    @post = Post.new(post_params)
     if @post.save
       flash[:success] = "Post Created"  
       redirect_to @post
@@ -28,9 +32,10 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content, :user_id)
   end
-
-  def find_user
-    #@user = User.find(session[:id])
+  def post_logged_in?
+    unless logged_in?
+      flash[:danger] = "Log in first"
+      redirect_to login_path
+    end
   end
-
 end

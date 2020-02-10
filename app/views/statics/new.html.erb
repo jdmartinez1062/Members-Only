@@ -1,5 +1,16 @@
 <h1>Statics#new</h1>
 <p>Find me in app/views/statics/new.html.erb</p>
-<%= link_to "Sign up now!", new_user_path%>
+
+<%if logged_in?%>
+    <div>
+    <%= link_to "Log out", logout_path %>
+    <%= link_to "Create post", new_post_path%>
+    </div>
+<%else%>
+    <div>
+    <%= link_to "Log in", login_path %>
+    <%= link_to "Sign up now!", new_user_path%>
+    </div>
+<% end %>
+
 <%= link_to "Read posts", posts_path%>
-<%= link_to "Create post", new_post_path%>

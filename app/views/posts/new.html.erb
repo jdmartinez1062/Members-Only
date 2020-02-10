@@ -6,6 +6,7 @@
     <%=f.text_field :title%>
     <%=f.label :content, 'Story:'%>
     <%=f.text_area :content%>
+    <%=f.hidden_field :user_id, value: current_user.id%>
 
     <%=f.submit "Create Post"%>    
 
