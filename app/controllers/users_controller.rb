@@ -16,6 +16,7 @@ class UsersController < ApplicationController
       flash.now[:warnign] = "Sign up unsuccessfull"
       render 'new'
     end
+   
   end
 
   def edit

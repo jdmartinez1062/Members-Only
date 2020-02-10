@@ -2,9 +2,16 @@
     
     
 
-<%=form_for @user do |f|%>
+<%=form_with model: @user, local: true do |f|%>
     <div>
-    <%=render 'shared/users_error_messages' %>
+    <%=render 'shared/users_error_messages'%>
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     </div>
     <%=f.label :name, "Username"%>
     <%=f.text_field :name%>

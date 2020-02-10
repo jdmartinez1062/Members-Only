@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :find_user, only: [:create, :edit, :update]
   def new
     @post = Post.new()
   end
@@ -7,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params, @user.id)
     if @post.save
       flash[:success] = "Post Created"  
       redirect_to @post
@@ -25,7 +26,11 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :user_id )
+    params.require(:post).permit(:title, :content, :user_id)
+  end
+
+  def find_user
+    #@user = User.find(session[:id])
   end
 
 end
