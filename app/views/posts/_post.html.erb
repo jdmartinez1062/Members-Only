@@ -1,3 +1,8 @@
 <li>
   <%= link_to post.title, post%>
+  <%if logged_in?%>
+      <div>
+        <p>Author: <%= User.find_by(id: post.user_id).name%></p>
+      </div>
+    <% end %>
 </li>

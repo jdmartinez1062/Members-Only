@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   include SessionsHelper
   include PostsHelper
 
-  before_action :post_logged_in?, only: [:create, :edit, :update]
+  before_action :post_logged_in?, only: [:new, :create, :edit, :update]
   def new
     @post = Post.new()
   end
