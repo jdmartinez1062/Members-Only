@@ -18,10 +18,10 @@
 <br />
 <p align="center">
   <a href="https://github.com/jdmartinez1062/Members-Only">
-    <!-- <img src="app/assets/images/badge.svg" widht= "200px" height="200px"> -->
+    <img src="app/assets/images/badge.svg" widht= "200px" height="200px">
   </a>
 
-  <h3 class ="norse" align="center" style="@font-face {font-family: 'Norse'; src: url('/fonts/Norse.otf'); font-family:'Norse'}">Project 6: Members-Only</h3>
+  <h3 class ="norse" align="center" style="@font-face {font-family: 'Norse'; src: url('/fonts/Norse.otf'); font-family:'Norse'}">Project 2: Members-Only</h3>
 
   <p align="center">
     Members-Only simple model
@@ -46,6 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+
 
 
 [Microverse](https://www.microverse.org/) Sixth Ruby on Rails Section Main Curriculum Project "Authentication"
