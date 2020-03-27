@@ -17,9 +17,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/jdmartinez1062/Members-Only">
-    <img src="app/assets/images/badge.svg" widht= "200px" height="200px">
-  </a>
+  
 
   <h3 class ="norse" align="center" style="@font-face {font-family: 'Norse'; src: url('/fonts/Norse.otf'); font-family:'Norse'}">Project 6: Members-Only</h3>
 
