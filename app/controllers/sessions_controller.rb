@@ -1,11 +1,10 @@
 class SessionsController < ApplicationController
   include SessionsHelper
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    if user&.authenticate(params[:session][:password])
       log_in(user)
       redirect_to user
     else
@@ -18,5 +17,4 @@ class SessionsController < ApplicationController
     log_out(current_user) if logged_in?
     redirect_to root_path
   end
-
 end
