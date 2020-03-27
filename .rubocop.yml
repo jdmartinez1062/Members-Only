@@ -28,14 +28,6 @@ Metrics/BlockLength:
   ExcludedMethods: ['describe']
   Max: 30
 
-Style/HashEachMethods: 
-  Enabled: true
-Style/HashTransformKeys: 
-  Enabled: true
-Style/HashTransformValues: 
-  Enabled: true
-
-
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -56,3 +48,4 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+  
