@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   has_many :posts
+  before_create :remember
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d]+\.[a-z]+\z/i.freeze
 
@@ -22,8 +23,8 @@ class User < ApplicationRecord
   end
 
   def remember
-    @remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    self.remember_token = User.new_token
+    self.remember_digest = User.digest(@remember_token)
   end
 
   def forget
