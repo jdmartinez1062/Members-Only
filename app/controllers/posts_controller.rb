@@ -34,9 +34,10 @@ class PostsController < ApplicationController
   end
 
   def post_logged_in?
-    unless logged_in?
-      flash[:danger] = 'Log in first'
-      redirect_to login_path
-    end
+    
+    return unless logged_in?
+
+    flash[:danger] = 'Log in first'
+    redirect_to login_path
   end
 end
